@@ -1,10 +1,11 @@
-from pydantic import BaseModel,EmailStr
+from pydantic import BaseModel, EmailStr
+
 
 class Recommendation(BaseModel):
-    id: int
     city: str
     activity: str
     outfit: str
+    temperature: str
 
 
 class User(BaseModel):
@@ -14,5 +15,3 @@ class User(BaseModel):
 
 class UserCreate(User):
     name: str
-
-    
