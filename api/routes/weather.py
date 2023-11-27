@@ -39,7 +39,7 @@ def get_weather_and_recommendations(
         elif temp > 30:
             temperature = TemperatureRangeEnum.temp4
         recommendation = crud.fetch_recommendation(
-            email=email, city=city, temperature=temperature, db=db
+            email=email, city=city, temperature=temperature, summary=summary, db=db
         )
         return {
             "summary": summary,

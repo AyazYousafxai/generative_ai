@@ -123,12 +123,14 @@ def delete_recommendation(email: str, city: str, db: Session):
         )
 
 
-def fetch_recommendation(email: str, city: str, temperature: str, db: Session):
+def fetch_recommendation(
+    email: str, city: str, temperature: str, summary: str, db: Session
+):
     recommendation = (
         db.query(models.Recommendation)
         .filter(
             and_(
-                models.Recommendation.city == city,
+                # models.Recommendation.city == city,
                 models.Recommendation.user_id == email,
                 models.Recommendation.temperature == temperature,
             )
@@ -139,6 +141,6 @@ def fetch_recommendation(email: str, city: str, temperature: str, db: Session):
     if not recommendation:
         raise HTTPException(
             status_code=404,
-            detail=f"Recommendation not found Please add recommendation",
+            detail=f"Recommendation not found Please add recommendation and check the summary {summary}",
         )
     return recommendation
