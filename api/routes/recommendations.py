@@ -1,9 +1,8 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, Depends
 from db.database import get_db
 from sqlalchemy.orm import Session
 from api.dependencies.jwt import verify_token
 from db import crud
-from enum import Enum
 from db.schemas import Recommendation
 from api.services.weather_enums import TemperatureRangeEnum
 

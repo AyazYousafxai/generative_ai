@@ -17,6 +17,8 @@ git clone git@github.com:AyazYousafxai/generative_ai.git
 cd generative_ai
 ```
 
+Create a `.env` file inside the `generative_ai` folder. Obtain the necessary secrets from the provided email and add them to the `.env` file
+
 **Step 2: Start the Docker Compose Services**
 
 Run the Docker Compose command to start the services defined in the `docker-compose.yml` file:
@@ -92,7 +94,6 @@ POST user/login
   "password": "string"
 }
 ```
-
 
 ### Setting Recommendations
 
