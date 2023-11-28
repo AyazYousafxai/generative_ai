@@ -31,6 +31,13 @@ docker-compose up
 
 Wait for 5 to 10 minutes for the `facebook/bart-large-cnn` model to download. The service will start automatically once the downloading is completed.
 
+config.json: 100%|██████████| 1.58k/1.58k [00:00<00:00, 31.1kB/s]
+pytorch_model.bin: 100%|██████████| 1.63G/1.63G [02:22<00:00, 11.4MB/s]
+generation_config.json: 100%|██████████| 363/363 [00:00<00:00, 2.58MB/s]
+vocab.json: 100%|██████████| 899k/899k [00:00<00:00, 5.18MB/s]
+merges.txt: 100%|██████████| 456k/456k [00:00<00:00, 12.3MB/s]
+tokenizer.json: 100%|██████████| 1.36M/1.36M [00:00<00:00, 5.62MB/s]
+
 **Step 4: Access the Application**
 
 Once the services are running and the model is downloaded, you can access the application's documentation by opening a web browser and navigating to:
