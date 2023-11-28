@@ -10,7 +10,7 @@ from api.services.weather_enums import TemperatureRangeEnum
 router = APIRouter()
 
 
-@router.post("/recommendations/")
+@router.post("")
 async def create_recommendation(
     city: str,
     activities: str,
@@ -32,7 +32,7 @@ async def create_recommendation(
     return add_recommendation
 
 
-@router.get("/recommendations/{city}", response_model=list[Recommendation])
+@router.get("/{city}", response_model=list[Recommendation])
 async def read_recommendation(
     city: str, db: Session = Depends(get_db), token: dict = Depends(verify_token)
 ):
@@ -42,7 +42,7 @@ async def read_recommendation(
     return recommendation
 
 
-@router.put("/recommendations/{city}")
+@router.put("/{city}")
 async def update_recommendation(
     city: str,
     activities: str,
@@ -63,7 +63,7 @@ async def update_recommendation(
     return {"message": f"Recommendations for {city} updated successfully"}
 
 
-@router.delete("/recommendations/{city}")
+@router.delete("/{city}")
 async def delete_recommendation(
     city: str, db: Session = Depends(get_db), token: dict = Depends(verify_token)
 ):

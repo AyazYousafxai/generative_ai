@@ -130,7 +130,7 @@ def fetch_recommendation(
         db.query(models.Recommendation)
         .filter(
             and_(
-                # models.Recommendation.city == city,
+                models.Recommendation.city == city,
                 models.Recommendation.user_id == email,
                 models.Recommendation.temperature == temperature,
             )
